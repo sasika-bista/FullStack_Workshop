@@ -8,39 +8,67 @@
   </head>
   <body>
     <header>
-      <h1>Sasika Bista</h1>
-      <nav>
-        <ul>
-          <li>About</li>
-          <li>Work</li>
-          <li>contact</li>
+      <h1 id="headName">Sasika Bista</h1>
+      <nav class="navMenu">
+        <ul class="heroList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">contact</a></li>
         </ul>
       </nav>
+      <button
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        id="menu-button"
+      >
+        <img
+          width="48"
+          height="48"
+          src="./images/icons8-hamburger-menu-50.png"
+          alt="menu"
+        />
+      </button>
     </header>
     <section>
-      <div class="left-hero">
-        <div class="me">
-          <img src="./images/9.png" />
-          <div class="hero-name">
-            Hi I am Sasika Bista.<br />
-            Welcome to my Portfolio
+      <div class="videos">
+        <video autoplay loop muted id="video-background">
+          <!-- Use a small, low-res video file for demonstration/performance -->
+          <source src="./Videos/butterfly.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <audio id="bgSound" autoplay loop>
+        <source src="./audio/VID_20250414_153735.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <div class="sectionContent">
+        <div class="left-hero">
+          <div class="me">
+            <img src="./images/9.png" />
+            <div class="hero-name">
+              Hi I am Sasika Bista.<br />
+              Welcome to my Portfolio
+            </div>
+          </div>
+        </div>
+        <div class="tech_stacks">
+          <p>I am Proficient in using</p>
+          <div class="techImg">
+            <img src="./logos/htmlLogo.svg" />
+            <img src="./logos/cssLogo.svg" />
+            <img src="./logos/reactLogo.svg" />
+            <img src="./logos/tailwindLogo.svg" />
+            <img src="./logos/javaLogo.svg" /><br />
+            <img src="./logos/pythonLogo.png" />
+            <img src="./logos/sqlLogo.png" />
+            <img src="./logos/unityLogo.png" />
           </div>
         </div>
       </div>
-      <div class="tech_stacks">
-        <p>I am Proficient in using</p>
-        <img src="./logos/htmlLogo.svg" />
-        <img src="./logos/cssLogo.svg" />
-        <img src="./logos/reactLogo.svg" />
-        <img src="./logos/tailwindLogo.svg" />
-        <img src="./logos/javaLogo.svg" /><br />
-        <img src="./logos/pythonLogo.png" />
-        <img src="./logos/sqlLogo.png" />
-        <img src="./logos/unityLogo.png" />
-      </div>
     </section>
 
-    <div class="about">
+    <div class="about" id="about">
       <div class="about_content">
         <div class="leftImg">
           <img src="./images/9.png" />
@@ -59,7 +87,7 @@
       </div>
     </div>
 
-    <div class="work">
+    <div class="work" id="work">
       <div class="workHeader">
         <h2>My Works</h2>
         <div class="line"></div>
@@ -124,7 +152,7 @@
       </div>
     </div>
 
-    <footer>
+    <footer id="contact">
       <div class="contactFooter">
         <div class="footerLeft">
           <h2>Sasika Bista</h2>
@@ -133,7 +161,7 @@
 
         <form
           class="footerForm"
-          action="https://formsubmit.co/YOUR_EMAIL_HERE"
+          action="https://formsubmit.co/sasika.bista28250@gmail.com"
           method="POST"
         >
           <label>Name *</label>
@@ -150,5 +178,6 @@
       </div>
       <p class="copyright">© 2025 Sasika Bista. All rights reserved.</p>
     </footer>
+    <script src="./main.js"></script>
   </body>
 </html>

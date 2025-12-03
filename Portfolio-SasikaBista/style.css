@@ -64,18 +64,54 @@ header {
   z-index: 10000;
 }
 
-header ul {
-  display: flex;
-  gap: 50px;
+nav {
   font-size: 20px;
-  list-style: none;
+  color: var(--text-main);
 }
 
+nav ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+.heroList a {
+  text-decoration: none;
+}
+
+header button {
+  display: none;
+}
+
+header button.open {
+  display: flex;
+}
+
+.heroList a:visited {
+  color: var(--lt_text-main);
+  text-decoration: none;
+}
 section {
   background-color: var(--bg);
   width: 100%;
-  min-height: 650px;
-  padding-top: 20px;
+  height: 650px;
+  margin-bottom: 200px;
+  position: relative;
+}
+.videos {
+  width: 100%;
+  height: 100%;
+}
+.videos video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.sectionContent {
+  width: 100%;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-items: center;
   text-align: center;
@@ -83,8 +119,8 @@ section {
   font: bold;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 200px;
 }
+
 .left-hero {
   display: flex;
   flex-direction: column;
@@ -123,11 +159,12 @@ section {
 
 .about {
   width: 100%;
+  height: 700px;
   padding: 4em 0;
   display: flex;
   background: linear-gradient(
     to bottom,
-    var(--bg) 0%,
+    var(--bg) 20%,
     whitesmoke 50%,
     var(--bg) 100%
   );
@@ -238,8 +275,10 @@ section {
 
 .work {
   width: 100%;
-  min-height: 680px;
+  /*min-height: 680px;*/
   padding: 2em 10em;
+  min-height: 800px;
+  padding-top: 100px;
 }
 
 .workHeader h2 {
@@ -253,8 +292,7 @@ section {
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-auto-flow: column;
-  column-gap: 50px;
-  row-gap: 150px;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -441,4 +479,242 @@ footer {
 
 .footerForm button:hover {
   opacity: 0.85;
+}
+
+@media (max-width: 780px) {
+  header button {
+    display: flex;
+  }
+  header button img {
+    width: 40px;
+  }
+
+  header {
+    position: relative;
+  }
+
+  nav {
+    border: 2px solid white;
+    border-radius: 20px;
+    background: white;
+    width: 150px;
+    position: absolute;
+    top: 82px;
+    right: 0;
+    z-index: 10;
+    display: none;
+  }
+  nav.show {
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .heroList a {
+    text-decoration: none;
+  }
+
+  header button.open {
+    display: flex;
+  }
+
+  .sectionContent {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 35px;
+    font: bold;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .left-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .me img {
+    width: 400px;
+  }
+
+  .hero-name {
+    font-style: italic;
+    position: absolute;
+    right: 190px;
+    bottom: -10px;
+  }
+
+  .tech_stacks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .tech_stacks img {
+    width: 90px;
+    border: 2px solid transparennt;
+    border-radius: 100px;
+    box-shadow: 0px 2px 20px white;
+    margin-bottom: 15px;
+    margin-left: 20px;
+  }
+
+  .about {
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(
+      to bottom,
+      var(--bg) 5%,
+      whitesmoke 50%,
+      var(--bg) 100%
+    );
+  }
+
+  .about_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3em;
+    position: relative;
+    padding-top: 50px;
+  }
+
+  .rightContext {
+    border: 2px solid white;
+    color: var(red);
+    width: 550px;
+    font: bold;
+  }
+
+  .rightContext h3 {
+    margin: 0;
+    font-size: 3.5rem;
+  }
+
+  .rightContext p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .work {
+    padding: 120px 120px;
+  }
+
+  .workContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 100%;
+  }
+
+  .workCard {
+    width: 490px;
+    height: 367px;
+    color: var(--accent);
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .workCard img {
+    width: 487px;
+    border-radius: 10px;
+    border: 2px solid var(--lt_text-muted);
+  }
+  .glassContain {
+    margin-top: auto;
+    position: absolute;
+    bottom: -367px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+
+    padding: 6px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 0.8s;
+  }
+
+  .workCard:hover .glassContain {
+    bottom: 0px;
+  }
+
+  .dTitle h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    margin: 20px 0 15px;
+    line-height: 1.1rem;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(100px);
+    transition-delay: 0.8s;
+  }
+
+  .workCard:hover .glassContain .dTitle h3 {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .workCard .glassContain .dStack {
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .workCard .glassContain .dStack li {
+    margin: 0;
+    border: 2px solid var(--accent-hover);
+    border-radius: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    font: bold;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(100px);
+    transition-delay: calc(var(--i) * 0.2s);
+  }
+
+  .workCard:hover .glassContain .dStack li {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  .descriptionNew {
+    opacity: 0;
+    transform: translateY(190px);
+    transition-delay: 0.8s;
+    transition: 0.5s;
+    margin: 0;
+  }
+
+  .workCard:hover .descriptionNew {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
